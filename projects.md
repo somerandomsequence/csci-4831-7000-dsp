@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Projects
-permalink: /projects/
 ---
 
 This page will be updated with information and templates relative to projects.

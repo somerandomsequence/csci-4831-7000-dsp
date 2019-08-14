@@ -23,8 +23,8 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 10/10/2019|7|Thu|Project Pitch|Project
 10/15/2019|8|Tue|Meeting/Work 3|Project
 10/17/2019|8|Thu|Meeting/Work 4|Project
-10/22/2019|9|Tue|Guest: Dr. Galen MacLauren|Guest
-10/24/2019|9|Thu|Discussion/Office Hours 3|Discussion
+10/22/2019|9|Tue|Discussion/Office Hours 3|Discussion
+10/24/2019|9|Thu|Guest: Dr. Galen MacLauren|Guest
 10/29/2019|10|Tue|Class Cancelled!|No Class
 10/31/2019|10|Thu|Discussion/Office Hours 4|Discussion
 11/5/2019|11|Tue|Guest: Dr. Kristi Potter|Guest

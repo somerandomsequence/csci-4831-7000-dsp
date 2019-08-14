@@ -38,9 +38,10 @@ Access to a computer will be required for course assignments and projects. The t
 
 ## Textbook
 
-There is no required text for this class. The following *recommended* text is available for free through the CU Library:
+There is no required text for this class. The following *recommended* texts is available for free (the former through the CU library, the latter on github.com):
 
  * [Applied Predictive Modeling](https://colorado.idm.oclc.org/login?url=http://link.springer.com/10.1007/978-1-4614-6849-3) by Max Kuhn
+ * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) by Jake VanderPlas
 
 All other readings are provided for download via the course website.
  

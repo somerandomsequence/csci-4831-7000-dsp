@@ -7,8 +7,6 @@ For each reading, you will have one week to read the papers assigned and prepare
 
 Each discussion period will have 1-2 students designated to lead the discussion. Graduate students are responsible for extending the discussion by finding and describing an additional paper of some relevance to the topic or discussion. That additional paper should also be mentioned with a citation in their write-up. Over the duration of the course, each student will be responsible for leading the discussion at least once. When preparing to lead the discussion expect to do a deeper read of the paper, prepare some notes or visuals describing the methods, and a few discussion questions.
 
-Readings:
-
 **Reading**|**Data Science Topic(s)**|**Domain Science Topic(s)**|**Papers**
 :-----:|:-----:|:-----:|:-----:
 1|Regression|Public Health and Medicine|[Zhu2004](http://datascienceprojects.org/papers/Zhu2004%20-%20Alcohol.pdf) and [Weng2017](http://datascienceprojects.org/papers/Weng2017%20-%20Cardiovascular.pdf)

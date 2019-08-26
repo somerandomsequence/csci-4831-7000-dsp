@@ -15,4 +15,4 @@ Readings:
 2|Classification and Clustering|Computer Science|[Miller2014](http://datascienceprojects.org/papers/Miller2014%20-%20Twitter%20Spam.pdf) and [Fawcett2005](http://datascienceprojects.org/papers/Fawcett2005%20-%20ROC.pdf)
 3|Visualization and Knowledge Discovery|Microbiology and Statistics|[McDonald2018](http://datascienceprojects.org/papers/McDonald2018%20-%20Microbiome.pdf) and [Hall2019](http://datascienceprojects.org/papers/Hall2019%20-%20Explainable.pdf)
 4|Geospatial Analysis|Microbiology and Computer Science|[Afshinnekoo2015](http://datascienceprojects.org/papers/Afshinnekoo2015%20-%20NYC%20Subway.pdf) and [Crandall2009](http://datascienceprojects.org/papers/Crandall2009%20-%20Photos.pdf)
-5|Deep Neural Networks|Computer Vision and Creativity|[Varshney2019](http://datascienceprojects.org/papers/Varshney2019%20-%20Chef.pdf) and [Redmon2016](http://datascienceprojects.org/papers/Redmon2016%20-%20YOLO.pdf)
+5|Deep Neural Networks|Computer Vision and Creativity|[Varshney2019](http://datascienceprojects.org/papers/Varshney2019%20-%20Chef.pdf) and [Redmon2016](http://datascienceprojects.org/papers/Redmon2016.-%20YOLO.pdf)

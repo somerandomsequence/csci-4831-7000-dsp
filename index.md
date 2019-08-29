@@ -10,7 +10,7 @@ title: Syllabus
  * *Time/Place:* TTh 9:30am-10:45am in Engineering Civil/Environ Wing 1B47
  * *Webpage:* [datascienceprojects.org](http://datascienceprojects.org)
  * *Slack:* [cudatascienceprojects.slack.com](https://cudatascienceprojects.slack.com)
- * *Instructors:* Caleb Phillips (caleb.phillips@colorado.edu) and <br/>Lindy Williams (lindy.williams@colorado.edu)
+ * *Instructors:* Caleb Phillips (caleb.phillips@colorado.edu) and <br/>Lindy Williams (lion8087@colorado.edu)
  * *Graduate Student Support:* TBD
  * *Office Hours:* By appointment or after class
 

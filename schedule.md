@@ -9,7 +9,7 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
 8/27/2019|1|Tue|[Lecture 0: Course Introduction](https://docs.google.com/presentation/d/1nGcUFW1eMshMngKgJ3I6yVREEP6hEP5AnzhwOq6PI1U/edit?usp=sharing)|Lecture|Fork Repo| 
 8/29/2019|1|Thu|[Lecture 1: Statistics for Data Scientists: Distributions, Tests, Normality](https://docs.google.com/presentation/d/14wiSgjc-4IOU2Mb93ajp5QoOs3nhY-83UxWjK5DjIBQ/edit?usp=sharing)|Lecture| Textbook Reading: Applied Predictive Modeling pages 1-26| 
-9/3/2019|2|Tue|Lecture 2: Learning Things: Clustering, Applied Predictive Modeling, <br/>Cross-Validation and Performance Evaluation|Lecture| |Fork Repo
+9/3/2019|2|Tue|[Lecture 2: Learning Things: Clustering, Applied Predictive Modeling, <br/>Cross-Validation and Performance Evaluation](https://docs.google.com/presentation/d/1etVTkAnQvjLA3-JyjRIGqrJUcZdrusSpinQ2AYHmfpU/edit?usp=sharing)|Lecture| |Fork Repo
 9/5/2019|2|Thu|Guest: Dr. Karen Kazor|Guest| | 
 9/10/2019|3|Tue|Guest: Community Data Science - Boulder Nonprofits|Guest| | 
 9/12/2019|3|Thu|Guest: Dr. Monte Lunacek|Guest| | 

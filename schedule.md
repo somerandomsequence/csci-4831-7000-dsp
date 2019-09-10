@@ -11,7 +11,7 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 8/29/2019|1|Thu|[Lecture 1: Statistics for Data Scientists: Distributions, Tests, Normality](https://docs.google.com/presentation/d/14wiSgjc-4IOU2Mb93ajp5QoOs3nhY-83UxWjK5DjIBQ/edit?usp=sharing)|Lecture| Textbook Reading: Applied Predictive Modeling pages 1-26| 
 9/3/2019|2|Tue|[Lecture 2: Learning Things: Clustering, Applied Predictive Modeling, <br/>Cross-Validation and Performance Evaluation](https://docs.google.com/presentation/d/1etVTkAnQvjLA3-JyjRIGqrJUcZdrusSpinQ2AYHmfpU/edit?usp=sharing)|Lecture| Textbook Reading: (See Slides)|Assignment 0: Fork Repo
 9/5/2019|2|Thu|Guest: Dr. Karen Kazor|Guest| | 
-9/10/2019|3|Tue|Guest: Community Data Science - Boulder Nonprofits|Guest| | 
+9/10/2019|3|Tue|Guest: Community Data Science - Boulder Nonprofits|Guest| [Sign up for a 1-1 Meeting Slot](https://appoint.ly/s/dsprojects/1-1)| 
 9/12/2019|3|Thu|Guest: Dr. Monte Lunacek|Guest| Assignment 1: Project Ideas & Research Questions | 
 9/17/2019|4|Tue|Lecture 3: Be a Polyglot - Practical Data Science <br/>Programming in Python and R|Lecture| | 
 9/19/2019|4|Thu|Meeting/Work 1|Project|Reading 1: Regression| Assignment 1: Project Ideas & Research Questions

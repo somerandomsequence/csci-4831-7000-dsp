@@ -11,7 +11,7 @@ title: Syllabus
  * *Webpage:* [datascienceprojects.org](http://datascienceprojects.org)
  * *Slack:* [cudatascienceprojects.slack.com](https://cudatascienceprojects.slack.com)
  * *Instructors:* Caleb Phillips (caleb.phillips@colorado.edu) and <br/>Lindy Williams (lindy.williams@colorado.edu)
- * *Graduate Student Support:* TBD
+ * *Graduate Student Support:* Anirudh Rathore and Mike McCabe
  * *Office Hours:* By appointment or after class
 
 ## Description

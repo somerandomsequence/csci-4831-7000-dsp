@@ -13,7 +13,7 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 9/5/2019|2|Thu|Guest: Dr. Karen Kazor|Guest| | 
 9/10/2019|3|Tue|Guest: Community Data Science - Boulder Nonprofits|Guest| [Sign up for a 1-1 Meeting Slot](https://appoint.ly/s/dsprojects/1-1)| 
 9/12/2019|3|Thu|[Guest: Dr. Monte Lunacek](https://docs.google.com/presentation/d/1NtWBjQBNEhI-vMZCT3q0QltomflwYQFC3TWMeKUTarU/edit?usp=sharing)|Guest| Assignment 1: Project Ideas & Research Questions | 
-9/17/2019|4|Tue|Lecture 3: Be a Polyglot - Practical Data Science <br/>Programming in Python and R|Lecture| | 
+9/17/2019|4|Tue|[Lecture 3: Be a Polyglot - Practical Data Science <br/>Programming in Python and R](https://docs.google.com/presentation/d/10ObNdg-TKQHaWdmloHsfdFfgwA7ae7_QNXKT9x_1uuk/edit?usp=sharing)|Lecture| | 
 9/19/2019|4|Thu|Meeting/Work 1|Project|Reading 1: Regression| Assignment 1: Project Ideas & Research Questions
 9/24/2019|5|Tue|Meeting/Work 2|Project| Assignment 2: Abstract, Data Prep, Methods Outline | 
 9/26/2019|5|Thu|Lecture 4: Data Munging, ETL, Databases - the thankless 80%|Lecture|Assignment 3: 1-slide pitch|

@@ -43,7 +43,7 @@ My research questions are:
 Q1: Is the population size of pikas declining or increasing in the last 20 years?
 Q2: Is the observed population size of pikas correlated with rainfall, average temperature, or drought?
 
-The data I hope to use is collected by the Front Range Pika Projact (FPPP) at http://www.pikapartners.org/cwis438/websites/FRPP/Home.php?WebSiteID=18
+The data I hope to use is collected by the Front Range Pika Projact (FRPP) at http://www.pikapartners.org/cwis438/websites/FRPP/Home.php?WebSiteID=18
 
 I plan to use historic weather data from National Weather Service stations.
 
@@ -53,3 +53,46 @@ If I'm unable to obtain the data I need for this study, I'm also interested in .
 ```
 
 During your 1-1 meeting with Caleb and Lindy, you'll discuss these ideas, research questions, data and the risks you see.
+
+## Assignment 2: Methods Plan and Data Prep
+
+For assignment 2 you'll submit a more detailed plan for your methods and initial code to obtain, clean and prepare data for initial exploratory data analysis.
+
+For the methods plan, you should state the format of the data (likely a table), your plans for exploratory data analysis (EDA) and initial visualization. If there are specific research questions you aim to test, provide hypotheses along with the methods you intend to use to test them. For instance:
+
+```
+The data table I've prepared has these fields:
+
+  * Year
+  * Number of pikas observed
+  * Number of observer/days
+  * Pikas per observer/day
+  * Average annual rainfall
+  * Average day time high
+  * Drought Severity Index
+  
+There are 702 observations that I've grouped into annualized bins spanning the last 10 years. I summed the data for each year and have also calculated a pika count normalized to the number of citizen observers to attempt to account for sampling bias.
+
+EDA: To understand the trend of pika population size as and possible correlating factors, I'll plot
+pika population over time. I'll also make a map of the data collected to understand the spatial distribution and potential for bias.
+
+Hypothesis 1: The population size of pikas is declining in the last 20 years.
+Proposed Methods: I will use a linear regression between year and measured FRPP pika population size to assess whether the slope of the trend is negative or positive and whether the year contributes significantly to this slope. If the slope is negative and the relationship significant, I'll affirm the hypothesis. In addition, I'll calculate a pearson's correlation coefficient and plot the relationship over time for visual inspection.
+
+Hypothesis 2: The population size is correlated with weather trends, and e.g., there are fewer pikas when the weather is warmer and there is less rain.
+Proposed Methods: Similar to the above, I will use a (multiple) linear regression to determine the relationship between Pika population size and the weather variables. In the initial model, I will exclude 'year' to see if these variables are independently correlated with the pika population. A complete predictive model that includes year will also be fitted.
+
+All analyses will be performed with Python and ScikitLearn. I plan to use Pandas for data pre-processing, and Bokeh for visualization.
+```
+
+For the code, commit your ETL code and process to your Git Lab repository within the project directory. You can structure this however you like, but it should be navigable and have sufficient documentation for an outside code reviewer to see and understand what you're doing and potentially run it themselves.
+
+## Assignment 3: One Slide Project Pitch
+
+For assignment 3, you'll prepare a 1-slide presentation about your project topic and present it to the class. 
+
+There are examples of prior students' one slide summary in [The Lecture 5 Slide Deck](https://docs.google.com/presentation/d/1uMkUP0nezLKsI5AvFMoTfQ96WywtTgEvxPx4gKjRfVE/edit#slide=id.g63928dafca_0_0).
+
+Create your 1-slide summary in Google Slides, then send it to Caleb and/or Lindy (make sure it is shared so we can view it).
+
+During your presentation, you'll have 5 minutes during which you'll describe the topic, approach, and methods and take 1-2 questions from the class.

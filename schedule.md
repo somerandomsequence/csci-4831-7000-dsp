@@ -15,10 +15,10 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 9/12/2019|3|Thu|[Guest: Dr. Monte Lunacek](https://docs.google.com/presentation/d/1NtWBjQBNEhI-vMZCT3q0QltomflwYQFC3TWMeKUTarU/edit?usp=sharing)|Guest| Assignment 1: Project Ideas & Research Questions | 
 9/17/2019|4|Tue|[Lecture 3: Be a Polyglot - Practical Data Science <br/>Programming in Python and R](https://docs.google.com/presentation/d/10ObNdg-TKQHaWdmloHsfdFfgwA7ae7_QNXKT9x_1uuk/edit?usp=sharing)|Lecture| | 
 9/19/2019|4|Thu|Meeting/Work 1|Project|Reading 1: Regression| Assignment 1: Project Ideas & Research Questions
-9/24/2019|5|Tue|Meeting/Work 2|Project| Assignment 2: Abstract, Data Prep, Methods Outline | 
+9/24/2019|5|Tue|Meeting/Work 2|Project| Assignment 2: Data Prep and Methods Plan | 
 9/26/2019|5|Thu|Lecture 4: Data Munging, ETL, Databases - the thankless 80%|Lecture|[Assignment 3: 1-slide pitch](https://docs.google.com/presentation/d/1uMkUP0nezLKsI5AvFMoTfQ96WywtTgEvxPx4gKjRfVE/edit#slide=id.g63928dafca_0_0)|
 10/1/2019|6|Tue|Discussion/Office Hours 1|Discussion|Reading 2: Classification and Clustering|Reading 1 
-10/3/2019|6|Thu|Project Pitch|Project||Assignment 2+3: Abstract, Data Prep, Methods Outline & 1-slide pitch
+10/3/2019|6|Thu|Project Pitch|Project||Assignment 2+3: Data Prep, Methods Plan & 1-slide pitch
 10/8/2019|7|Tue|Discussion/Office Hours 2|Discussion|Assignment 4: Draft Results & Code|Reading 2
 10/10/2019|7|Thu|Lecture 5: Scientific Data Science: Hypothesis driven, <br/>Experimental, Reproducible, & Publishable|Lecture| | 
 10/15/2019|8|Tue|Meeting/Work 3|Project|Reading 3: Visualization and <br/>Knowledge Discovery|

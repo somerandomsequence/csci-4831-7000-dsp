@@ -14,6 +14,7 @@ For this assignment you will likely work in either an Rmd ([R Markdown](http://r
 ## Data
 
 Download the data: [gss.csv.bz2](https://FIXME) (20 MB) 
+
 And the codebook: [gss-codebook.pdf](https://FIXME) (36 MB)
 
 To save you a bit of time, this data has already been converted from the proprietary SPSS format to CSV. Once extracted, the data is about 800 MB in a single CSV. You don't need to extract the file unless you want to, since many CSV readers (including those in R and Pandas' read\_csv function) can read a bzipped CSV directly.

@@ -129,7 +129,7 @@ ggplot(pct.by.year,aes(x=YEAR,y=HAPPY)) + geom_point() + geom_smooth(method="lm"
 
 **Q5:** Next, fit a regression model with HAPPY as the dependent variable, and YEAR and HEALTH as the independent variables (features). How good is this regression model? What does it mean?
 
-#### Part 2: On your own now ####
+### Part 2: On your own now ###
 
 For the next part of this assignment, you'll go out on your own:
 
@@ -140,6 +140,6 @@ For the next part of this assignment, you'll go out on your own:
 
 **Q8:** Using a binary classification model (like logistic regression) combine all these factors to make one synthesized model (including age and health from above as well). Since logistic regression is a binary classification model, you'll need to reduce the HAPPY variable to 2 levels (e.g., HAPPY = 1 or 2 and HAPPY = 3). Explain your decision here and how it may impact the results. What does the model tell you about happiness and what is correlated with it?
 
-#### Extra Credit
+### Extra Credit
 
 **EC1:** Finally, try a multi-class classification model like a random forest, neural network, or support vector machine. How well or poorly does this work? Which variables contribute most to your model (i.e., can you explain what contributes most to happiness using this model?).

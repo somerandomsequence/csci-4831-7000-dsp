@@ -13,9 +13,9 @@ For this assignment you will likely work in either an Rmd ([R Markdown](http://r
 
 ## Data
 
-Download the data: [gss.csv.bz2](https://FIXME) (20 MB) 
+Download the data: [gss.csv.bz2](https://drive.google.com/file/d/1MvP8kSbr10w1DHgwY3vMqukhnnIWvssj/view?usp=sharing) (20 MB) 
 
-And the codebook: [gss-codebook.pdf](https://FIXME) (36 MB)
+And the codebook: [gss-codebook.pdf](https://drive.google.com/file/d/1Ug1Od-GnlNAZv8_0LO-6HJwuvVCMF7WL/view?usp=sharing) (36 MB)
 
 To save you a bit of time, this data has already been converted from the proprietary SPSS format to CSV. Once extracted, the data is about 800 MB in a single CSV. You don't need to extract the file unless you want to, since many CSV readers (including those in R and Pandas' read\_csv function) can read a bzipped CSV directly.
 
@@ -24,9 +24,11 @@ This data contains 64,814 rows (surveys) and many columns. The columns are descr
 ## References
 
  * [R Language](http://www.r-project.org/) and [R Package System (CRAN)](http://cran.rstudio.com/)
- * [GGPlot2](http://ggplot2.org/) and [GGMap](http://cran.r-project.org/web/packages/ggmap/ggmap.pdf)
+ * [GGPlot2](http://ggplot2.org/)
 
 ## Instructions
+
+Make a new directory in your class repository called happiness and put your work for this assignment (recitation) in there. Don't accidentally commit the data :).
 
 ### Part 1: Training Wheels ###
 

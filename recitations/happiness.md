@@ -77,7 +77,7 @@ Looks like most people are pretty happy. Let's suppose (hypothesize) that people
   * No answer = 9
   * Not applicable = 0
 
-After converting the health column to a factor, if we want to look at how happyness and health are correlated, we could try a contingency table. To simplify things, let's also create a new dataframe (df2) where we omit those who didn't provide an answer:
+After converting the health column to a factor, if we want to look at how happiness and health are correlated, we could try a contingency table. To simplify things, let's also create a new dataframe (df2) where we omit those who didn't provide an answer:
 
 {% highlight r %}
 df2 <- subset(df,as.numeric(df$HEALTH) %in% c(1,2,3,4) & as.numeric(df$HAPPY) %in% c(1,2,3))
@@ -92,7 +92,7 @@ thh
 
 Using a [Chi-squared test](https://en.wikipedia.org/wiki/Chi-squared_test), we can measure how likely it is that these data are independent (i.e., that there is no correlation or dependency between them).
 
-**Q2:** Try performin a chi-square test on these two factors. Are they independent or does it appear that happiness and health are interrelated? Why?
+**Q2:** Try performing a chi-squared test on these two factors. Are they independent or does it appear that happiness and health are interrelated? Why?
 
 Now let's try a different variable, that's numeric not categorical, like the age of the participants. We can make a box and whiskers plot using the Grammar of Graphics (GGPlot) to compare the distribution of age in each happiness category
 
@@ -107,7 +107,7 @@ We can use an [Analysis of Variance (ANOVA)](https://en.wikipedia.org/wiki/Analy
 summary(aov(AGE ~ HAPPY,data=df))
 {% endhighlight %}
 
-**Q3:** Does age explain happyness according to the ANOVA? Why or why not?
+**Q3:** Does age explain happiness according to the ANOVA? Why or why not?
 
 Now *load the full data* instead of just the first 1,000 rows.
 
@@ -120,7 +120,7 @@ pct.less.than.two <- function(x){ 100*sum(as.numeric(x) < 2)/length(x) }
 pct.by.year <- aggregate(cbind(HEALTH,HAPPY) ~ YEAR,data=df,FUN=pct.less.than.two)
 {% endhighlight %}
 
-You can make a scatterplot of these data using ggplot or another tool. You might want to plot a single variable over time, or plot health and happyness against each other.
+You can make a scatterplot of these data using ggplot or another tool. You might want to plot a single variable over time, or plot health and happiness against each other.
 
 {% highlight r %}
 ggplot(pct.by.year) + geom_point(aes(x=YEAR,y=HAPPY))
@@ -128,7 +128,7 @@ ggplot(pct.by.year) + geom_point(aes(x=HEALTH,y=HAPPY))
 ggplot(pct.by.year,aes(x=YEAR,y=HAPPY)) + geom_point() + geom_smooth(method="lm")
 {% endhighlight %}
 
-**Q4:** To understand how well these variables are correlated, you can use [Pearson's correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient) and/or fit a linear regression. Calculate the correlation coefficient and p-value for each combination of variable (health and year, happiness and year, health and happyness). In R, the function is called 'cor.test'. Are they correlated? How well? What does this mean?
+**Q4:** To understand how well these variables are correlated, you can use [Pearson's correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient) and/or fit a linear regression. If you fit a linear regression, spend some time researching the assumptions. Calculate the correlation coefficient and p-value for each combination of variable (health and year, happiness and year, health and happiness). In R, the function is called 'cor.test'. Are they correlated? How well? What does this mean?
 
 **Q5:** Next, fit a regression model with HAPPY as the dependent variable, and YEAR and HEALTH as the independent variables (features). How good is this regression model? What does it mean?
 
@@ -141,7 +141,7 @@ For the next part of this assignment, you'll go out on your own:
 
 **Q7:** Using methods like those in part 1, explore whether or not the data supports your hypotheses.
 
-**Q8:** Using a binary classification model (like logistic regression) combine all these factors to make one synthesized model (including age and health from above as well). Since logistic regression is a binary classification model, you'll need to reduce the HAPPY variable to 2 levels (e.g., HAPPY = 1 or 2 and HAPPY = 3). Explain your decision here and how it may impact the results. What does the model tell you about happiness and what is correlated with it?
+**Q8:** Using a binary classification model (like logistic regression) combine all these factors to make one synthesized model (including age and health from above as well). Since logistic regression is a binary classification model, you'll need to reduce the HAPPY variable to 2 levels (e.g., HAPPY = 1 or 2 and HAPPY = 3). Explain your decision here and how it may impact the results. What does the model tell you about happiness and what is correlated with it? Make sure to look into the assumptions made by a logistic regression and check these.
 
 ### Extra Credit
 

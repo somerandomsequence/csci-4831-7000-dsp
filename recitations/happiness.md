@@ -128,7 +128,7 @@ ggplot(pct.by.year) + geom_point(aes(x=HEALTH,y=HAPPY))
 ggplot(pct.by.year,aes(x=YEAR,y=HAPPY)) + geom_point() + geom_smooth(method="lm")
 {% endhighlight %}
 
-**Q4:** To understand how well these variables are correlated, you can use [Pearson's correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient) and/or fit a linear regression. If you fit a linear regression, spend some time researching the assumptions. Calculate the correlation coefficient and p-value for each combination of variable (health and year, happiness and year, health and happiness). In R, the function is called 'cor.test'. Are they correlated? How well? What does this mean?
+**Q4:** To understand how well these variables are correlated, you can use [Pearson's correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient) and/or fit a linear regression. If you fit a linear regression, spend some time [researching the assumptions](https://towardsdatascience.com/assumptions-of-linear-regression-algorithm-ed9ea32224e1). Calculate the correlation coefficient and p-value for each combination of variable (health and year, happiness and year, health and happiness). In R, the function is called 'cor.test'. Are they correlated? How well? What does this mean?
 
 **Q5:** Next, fit a regression model with HAPPY as the dependent variable, and YEAR and HEALTH as the independent variables (features). How good is this regression model? What does it mean?
 

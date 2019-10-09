@@ -20,7 +20,7 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 10/1/2019|6|Tue|Discussion/Office Hours 1|Discussion|Reading 2: Classification and Clustering|Reading 1 
 10/3/2019|6|Thu|Project Pitch|Project||Assignment 2+3: Data Prep, Methods Plan & 1-slide pitch
 10/8/2019|7|Tue|Discussion/Office Hours 2|Discussion|Assignment 4: Draft Results & Code|Reading 2
-10/10/2019|7|Thu|Lecture 5: Scientific Data Science: Hypothesis driven, <br/>Experimental, Reproducible, & Publishable|Lecture| | 
+10/10/2019|7|Thu|[Lecture 5: Scientific Data Science: Hypothesis driven, <br/>Experimental, Reproducible, & Publishable](https://docs.google.com/presentation/d/1do0C39sKTMvCNauPkb7ibaLtiog10sicR0odVrioLR8/edit?usp=sharing)|Lecture| | 
 10/15/2019|8|Tue|Meeting/Work 3|Project|Reading 3: Visualization and <br/>Knowledge Discovery|
 10/17/2019|8|Thu|Meeting/Work 4|Project| | 
 10/22/2019|9|Tue|Discussion/Office Hours 3|Discussion| | Reading 3

@@ -1,9 +1,7 @@
 ---
 layout: page
-title: Projects
+title: Assignments
 ---
-
-This page will be updated with information and templates relative to projects.
 
 ## Assignment 0: Fork Repo
 
@@ -96,3 +94,11 @@ There are examples of prior students' one slide summary in [The Lecture 5 Slide 
 Create your 1-slide summary in Google Slides, then send it to Caleb and/or Lindy (make sure it is shared so we can view it).
 
 During your presentation, you'll have 5 minutes during which you'll describe the topic, approach, and methods and take 1-2 questions from the class.
+
+## Assignment 4: Draft Results
+
+For assignment 4, you will push a version of your repository with initial results and code to produce those results. These results should follow logically from the methods you described in assignment 2 and should be easy to find for someone reviewing your repository. While your results may not be complete at this point, there should be significant progress and it should be clear to an outside reviewer what you've done already and what is left to do.
+
+All supporting code including ETL and analysis should be similarly readable and sensible to an outside reviewer. To help orient those reviewing your submission, create a README.md file in your main repository directory to explain where to find the results, how to reproduce them, assumptions you've made, and how the repository is organized. 
+
+For documentation of code, follow a consistent practice. For instance, python code would ideally be [PEP-8](https://www.python.org/dev/peps/pep-0008/) and stand-alone files (including modules and scripts) might use [Google-style docstrings](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html). For notebooks, plots and code should be supplemented with top-of file explanations and readable, more like a laboratory notebook than a scratch pad. For R, the [tidyverse style guide](https://style.tidyverse.org/documentation.html) is a good reference.

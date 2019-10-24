@@ -102,3 +102,13 @@ For assignment 4, you will push a version of your repository with initial result
 All supporting code including ETL and analysis should be similarly readable and sensible to an outside reviewer. To help orient those reviewing your submission, create a README.md file in your main repository directory to explain where to find the results, how to reproduce them, assumptions you've made, and how the repository is organized. 
 
 For documentation of code, follow a consistent practice. For instance, python code would ideally be [PEP-8](https://www.python.org/dev/peps/pep-0008/) and stand-alone files (including modules and scripts) might use [Google-style docstrings](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html). For notebooks, plots and code should be supplemented with top-of file explanations and readable, more like a laboratory notebook than a scratch pad. For R, the [tidyverse style guide](https://style.tidyverse.org/documentation.html) is a good reference.
+
+## Assignment 5: Written Methods and Data
+
+For Assignment 5, you'll use the LaTeX template provided as part of the repository template to write the data and methods section of your paper. The data section should describe all the data being used, how it was obtained and processed and give relevant citations. The methods section should describe the methods you intend to use, how you determine whether the hypothesis has been validated, similar to the papers we've been reading as part of the class. If you want, you're also welcome to fill in details in the introduction, abstract, or results, but those changes are not required for this assignment.
+
+Citations will be required for data sources, or to explain/justify the use of particular methods. You can use either \bibitem commands in the references section or use BibTex and a tool like JabRef, Zotero or Mendeley to manage references. If you go the route of bibitem commands (as is shown in the template example), make sure the references are consistently formatted. If you use BibTex, make sure to commit your .bib file to the repository.
+
+You can use command line tools (e.g., pdflatex) to compile the PDF or an online tool like Overleaf or Sharelatex, however it's important that you commit (1) the .tex source file (2) a compiled PDF (3) any figures and (4) the .bib file if relevant.
+
+You'll be graded on the quality of the technical writing and description, which should be complete and use a professional tone similar to what would be found in an academic publication. Lastly, please give your paper a title (this can change later) and put your name where the author's name goes. You can leave sections you haven't written (e.g., abstract or methods) with the lorem ipsum text.

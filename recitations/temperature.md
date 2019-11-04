@@ -50,9 +50,7 @@ Try plotting the data both by using the index and date.
 
 What do you notice from the plot? Are there any trends that you can see? If so, what are they?
 
-**Q2:** 
-
-As we begin to explore the data, we will want to look at the data from multiple possible periods such as months, years, seasons, and weekdays. We will want to add these columns to the dataframe to include in our analysis. Do so now. <br>
+**Q2:** As we begin to explore the data, we will want to look at the data from multiple possible periods such as months, years, seasons, and weekdays. We will want to add these columns to the dataframe to include in our analysis. Do so now. <br>
 
 {% highlight r %}
 agg <- aggregate(data$Temp,
@@ -64,17 +62,13 @@ This above code will group aggregate by the month and year as well as calculatin
 
 Once you've aggregated the data a few different ways, visualize each one. What do you notice from these plots? Is this helpful to see different trends that may not be apparent by plotting all of the data at once? If so, what do you notice that you didn't previously?
 
-**Q3:** 
-
-Autocorrelation and Partial Autocorrelation plots can be very useful when analyzing time series data. It can provide insight to the lag values that will be helpful in forecasting. This [website](https://newonlinecourses.science.psu.edu/stat510/lesson/2/2.2) provides some background and interpretation help for the Autocorrelation Function (ACF) and the Partial Autocorrelation Function (PACF). 
+**Q3:** Autocorrelation and Partial Autocorrelation plots can be very useful when analyzing time series data. It can provide insight to the lag values that will be helpful in forecasting. This [website](https://newonlinecourses.science.psu.edu/stat510/lesson/2/2.2) provides some background and interpretation help for the Autocorrelation Function (ACF) and the Partial Autocorrelation Function (PACF). 
 
 The documentation for each of these functions in R can be found here as well: <br>[acf](https://www.rdocumentation.org/packages/stats/versions/3.6.1/topics/plot.acf) <br>[pacf](https://www.rdocumentation.org/packages/tseries/versions/0.1-2/topics/pacf). 
 
 After reading about these functions, what is the key difference between ACF and PACF?
 
-**Q4:** 
-
-Now we will actually implement ACF and PACF. Calling these functions is pretty simple using code like this:
+**Q4:** Now we will actually implement ACF and PACF. Calling these functions is pretty simple using code like this:
 
 {% highlight r %}
 pacf(data$Temp)
@@ -86,19 +80,13 @@ But the intrepretation of the graphs is the most important and more complicated 
 
 Before we dig into the modeling portion, one key difference between time series data and other data is the autocorrelation. Due to this, creating a testing and training set will not be created through random sampling. Sampling randomly would allow information to leak into your testing set and provide invalid model results. You will want to split data based on portions of time and forecast for the next time step(s). This will make more sense as you start looking into Prophet next...
 
-**Q5:** 
+**Q5:** Fit and Predict Minimum Temperature values using [Prophet](https://facebook.github.io/prophet/docs/quick_start.html#r-api). 
 
-Fit and Predict Minimum Temperature values using [Prophet](https://facebook.github.io/prophet/docs/quick_start.html#r-api). 
-
-**Q6:** 
-
-Evaluate your Prophet model. 
+**Q6:** Evaluate your Prophet model. 
 
 ### Extra Credit
 
-**EC1:** 
-
-Pick from ARIMA or LSTM to train a new forecasting model. Keep in mind that you will need to create a training and test set. It will be best if you can also do a time series cross validation which is different from a typical cross validation technique for the reason stated at the end of Question 4. 
+**EC1:** Pick from ARIMA or LSTM to train a new forecasting model. Keep in mind that you will need to create a training and test set. It will be best if you can also do a time series cross validation which is different from a typical cross validation technique for the reason stated at the end of Question 4. 
 
 Here is some more information about the [cross validation](https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9) for time series data
 

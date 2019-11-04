@@ -80,7 +80,7 @@ But the intrepretation of the graphs is the most important and more complicated 
 
 Before we dig into the modeling portion, one key difference between time series data and other data is the autocorrelation. Due to this, creating a testing and training set will not be created through random sampling. Sampling randomly would allow information to leak into your testing set and provide invalid model results. You will want to split data based on portions of time and forecast for the next time step(s). This will make more sense as you start looking into Prophet next...
 
-**Q5:** Fit and Predict Minimum Temperature values using [Prophet](https://facebook.github.io/prophet/docs/quick_start.html#r-api). 
+**Q5:** Fit and predict minimum temperature values using [Prophet](https://facebook.github.io/prophet/docs/quick_start.html#r-api). 
 
 **Q6:** Evaluate your Prophet model. 
 

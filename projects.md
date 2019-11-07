@@ -119,7 +119,7 @@ For Assignment 6, you'll add on to the LaTeX template provided as part of the re
 
 As in Assignment 5:
 
-Citations will be required for data sources, or to explain/justify the use of particular methods. You can use either \bibitem commands in the references section or use BibTex and a tool like JabRef, Zotero or Mendeley to manage references. If you go the route of bibitem commands (as is shown in the template example), make sure the references are consistently formatted. If you use BibTex, make sure to commit your .bib file to the repository.
+If you need to add citations, you can use either \bibitem commands in the references section or use BibTex and a tool like JabRef, Zotero or Mendeley to manage references. If you go the route of bibitem commands (as is shown in the template example), make sure the references are consistently formatted. If you use BibTex, make sure to commit your .bib file to the repository.
 
 You can use command line tools (e.g., pdflatex) to compile the PDF or an online tool like Overleaf or Sharelatex, however it's important that you commit (1) the .tex source file (2) a compiled PDF (3) any figures and (4) the .bib file if relevant.
 

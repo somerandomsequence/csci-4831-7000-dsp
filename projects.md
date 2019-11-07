@@ -112,3 +112,15 @@ Citations will be required for data sources, or to explain/justify the use of pa
 You can use command line tools (e.g., pdflatex) to compile the PDF or an online tool like Overleaf or Sharelatex, however it's important that you commit (1) the .tex source file (2) a compiled PDF (3) any figures and (4) the .bib file if relevant.
 
 You'll be graded on the quality of the technical writing and description, which should be complete and use a professional tone similar to what would be found in an academic publication. Lastly, please give your paper a title (this can change later) and put your name where the author's name goes. You can leave sections you haven't written (e.g., abstract or methods) with the lorem ipsum text.
+
+## Assignment 6: Results
+
+For Assignment 5, you'll add on to the LaTeX template provided as part of the repository template to write the results section of your paper, building off of assignment 5. The results section should discuss what you've found in your research, how it could be applied, and look at your research as a whole as well as next steps for this work or additional research that could add on to this work. This should follow the general format, tone, and structure as the papers we've read in class.
+
+As in Assignment 5:
+
+Citations will be required for data sources, or to explain/justify the use of particular methods. You can use either \bibitem commands in the references section or use BibTex and a tool like JabRef, Zotero or Mendeley to manage references. If you go the route of bibitem commands (as is shown in the template example), make sure the references are consistently formatted. If you use BibTex, make sure to commit your .bib file to the repository.
+
+You can use command line tools (e.g., pdflatex) to compile the PDF or an online tool like Overleaf or Sharelatex, however it's important that you commit (1) the .tex source file (2) a compiled PDF (3) any figures and (4) the .bib file if relevant.
+
+You'll be graded on the quality of the technical writing and description, which should be complete and use a professional tone similar to what would be found in an academic publication. 

@@ -23,6 +23,8 @@ It would be helpful to gather a good amount of data. I would suggest around 100 
 
  * [R Language](http://www.r-project.org/) and [R Package System (CRAN)](http://cran.rstudio.com/)
  * [GGPlot2](http://ggplot2.org/)
+ * [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/)
+
 
 ## Instructions
 
@@ -64,7 +66,7 @@ Once you've aggregated the data a few different ways, visualize each one. What d
 
 **Q3:** Autocorrelation and Partial Autocorrelation plots can be very useful when analyzing time series data. It can provide insight to the lag values that will be helpful in forecasting. This [website](https://newonlinecourses.science.psu.edu/stat510/lesson/2/2.2) provides some background and interpretation help for the Autocorrelation Function (ACF) and the Partial Autocorrelation Function (PACF). 
 
-The documentation for each of these functions in R can be found here as well: <br>[acf](https://www.rdocumentation.org/packages/stats/versions/3.6.1/topics/plot.acf) <br>[pacf](https://www.rdocumentation.org/packages/tseries/versions/0.1-2/topics/pacf). 
+The documentation for each of these functions in R can be found here as well: <br>[acf](https://www.rdocumentation.org/packages/stats/versions/3.6.1/topics/plot.acf) <br>[pacf](https://www.rdocumentation.org/packages/tseries/versions/0.1-2/topics/pacf)
 
 After reading about these functions, what is the key difference between ACF and PACF?
 
@@ -76,7 +78,8 @@ pacf(data$Temp)
 
 But the intrepretation of the graphs is the most important and more complicated part. Interpret the graphs. What information can you gather from the ACF plot? What about the PACF plot?
 
-### Part 2: On your own now: Modeling ###
+### Part 2: On your own now
+### Modeling ###
 
 Before we dig into the modeling portion, one key difference between time series data and other data is the autocorrelation. Due to this, creating a testing and training set will not be created through random sampling. Sampling randomly would allow information to leak into your testing set and provide invalid model results. You will want to split data based on portions of time and forecast for the next time step(s).
 
@@ -98,11 +101,11 @@ df <- bind_rows(
 ) %>%
   as_tbl_time(index = the_date)
 {% endhighlight r %}
-* code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
+* code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
 d. Determine the timesteps and batch size<br>
-	<p>1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)</p><br>
-	<p>2. Batch size: Where would you like to divide the data to predict?</p><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Batch size: Where would you like to divide the data to predict?<br>
 e. Center the data and store the values to undo tranformation later<br>
 
 Assuming Temp is the temperatures and df is your dataframe with the key column added, the code for part e may look something like this: 
@@ -116,12 +119,12 @@ rec_obj <- recipe(Temp ~ ., df) %>%
 center_history <- rec_obj$steps[[2]]$means["Temp"]
 scale_history <- rec_obj$steps[[3]]$means["Temp"]
 {% endhighlight r %}
-* code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
+* code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
-**Q6:** Modeling:
+**Q6:** Modeling: <br>
 f. Build the data for modeling:<br>
-	<p>1. Define functions: build matrix and reshape X (given in the blog)</p><br>
-	<p>2. Extract values, build, create, and reshape matrix</p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Define functions: build matrix and reshape X (given in the blog)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Extract values, build, create, and reshape matrix
 
 Assuming df_processed_tbl is the result from the bake() with the rec_obj and df, the code for part f2 for the training set may look something like this: 
 {% highlight r %}
@@ -139,7 +142,7 @@ y_train <- train_matrix[, (n_timesteps+1):(n_timesteps * 2)]
 X_train <- reshape_X_3d(X_train)
 y_train <- reshape_X_3d(y_train)
 {% endhighlight r %}
-* code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
+* code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
 g. initialize flags<br>
 h. itialize number of predictions, number of features, callbacks<br>
@@ -156,7 +159,7 @@ history <- model %>% fit(
   callbacks   = callbacks
 )
 {% endhighlight r %}
-* code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
+* code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
 
 ### Extra Credit

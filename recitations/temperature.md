@@ -24,6 +24,10 @@ It would be helpful to gather a good amount of data. I would suggest around 100 
  * [R Language](http://www.r-project.org/) and [R Package System (CRAN)](http://cran.rstudio.com/)
  * [GGPlot2](http://ggplot2.org/)
  * [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/)
+ * [Keras Documentation](https://keras.rstudio.com/index.html)
+ * [ARIMA](https://datascienceplus.com/time-series-analysis-using-arima-model-in-r/)
+ * [Prophet](https://facebook.github.io/prophet/docs/quick_start.html#r-api)
+ * [cross validation](https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9) 
 
 
 ## Instructions
@@ -83,15 +87,19 @@ But the intrepretation of the graphs is the most important and more complicated 
 
 Before we dig into the modeling portion, one key difference between time series data and other data is the autocorrelation. Due to this, creating a testing and training set will not be created through random sampling. Sampling randomly would allow information to leak into your testing set and provide invalid model results. You will want to split data based on portions of time and forecast for the next time step(s).
 
+For the modeling piece of this recitation, we will be exploring a Long-short term memory (LSTM) model. An LSTM is a Recurrent Neural Network (RNN) and considers the past observations. This is particularly helpful in scenarios where the future is determined in part by the past. Time series data is one application for LSTMs. We will be exploring Keras within this recitation, which is a part of Tensorflow.
+
 Throughout this tutorial on LSTM, we will be using pieces from this [tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) by RStudio. There will be modifications, so be sure to follow along with the steps listed here and not the steps in the blog. If you'd like a deeper dive into LSTM, I would suggest reviewing this blog post in more detail.
 
 Packages:<br>
-Make sure you run install_keras() if you are working in R instead of the typical install.packages(). Also, bring in recipes, dplyr, tibble, tibbletime, and ggplot2.
+Make sure you run install_keras() if you are working in R instead of the typical install.packages(). This will allow for the keras package as well as the Tensorflow backend to be installed. You can find more information about the installation [here] (https://keras.rstudio.com/index.html). 
 
-**Q5:** Transforming the data for modeling:<br>
-a. Create three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq)) to help quickly verify set lengths throughout this process <br>
-b. Split data into a training and validation set (we will address the test set later) by just using the indexes of the dataframe (About 2/3 of the data for training and 1/3 for testing is a place to start)<br>
-c. Bind the training and validation set together with a key and set the index to be the date<br>
+Also, install the packages: recipes, dplyr, tibble, tibbletime, and ggplot2.
+
+**Q5:** Transforming the data for modeling: We will need to do some additional data transforming before training a LSTM model.<br>
+**a.** We will want to make sure we have a dataframe created with these three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq)) to help quickly verify set lengths throughout this process <br>
+**b.** Split data into a training and validation set (we will address the test set later) by just using the indexes of the dataframe. Using about 2/3 of the data for training and 1/3 for testing is a reasonable place to start.<br>
+**c.** Bind the training and validation set together with a key and set the index to be the date<br>
 
 Assuming the_date is the Date type of dates, the code for part c may look something like this: 
 {% highlight r %}
@@ -103,10 +111,10 @@ df <- bind_rows(
 {% endhighlight r %}
 * code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
-d. Determine the timesteps and batch size<br>
+**d.** Determine the timesteps and batch size through answering the following two questions and initializing the variables n_timesteps, n_predictions, and batch_size.<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Batch size: Where would you like to divide the data to predict?<br>
-e. Center the data and store the values to undo tranformation later<br>
+**e.** Next you'll want to center the data and store the values to undo tranformation later.<br>
 
 Assuming Temp is the temperatures and df is your dataframe with the key column added, the code for part e may look something like this: 
 {% highlight r %}
@@ -122,8 +130,8 @@ scale_history <- rec_obj$steps[[3]]$means["Temp"]
 * code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
 **Q6:** Modeling: <br>
-f. Build the data for modeling:<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Define functions: build matrix and reshape X (given in the blog)<br>
+**f.** Next, you'll need to build the data for modeling:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Define functions: build matrix and reshape X (given in the tutorial)<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Extract values, build, create, and reshape matrix
 
 Assuming df_processed_tbl is the result from the bake() with the rec_obj and df, the code for part f2 for the training set may look something like this: 
@@ -144,11 +152,11 @@ y_train <- reshape_X_3d(y_train)
 {% endhighlight r %}
 * code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
-g. initialize flags<br>
-h. itialize number of predictions, number of features, callbacks<br>
-i. create model, add layers, fit the model, plot the history<br>
+**g.** Now you'll want to initialize the flags which will contain a lot of information for the LSTM model and parameters that you may want to consider changing or tuning. There is an example of this in the tutorial as well.<br>
+**h.** Now initialize the number of predictions, number of features, callbacks from the flags instead of manually as we did in Q5. You may also look into the optimizer, but we won't cover that in this tutorial.<br>
+**i.** Next, you'll create the model, add layers, fit the model, and plot the history.<br>
 
-Assuming , the code for part i (fit the model) may look something like this: 
+The code for part i (fit the model) may look something like this: 
 {% highlight r %}
 history <- model %>% fit(
   x           = X_train,
@@ -161,16 +169,22 @@ history <- model %>% fit(
 {% endhighlight r %}
 * code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
+In this process, you should see the model being fit on the training data and repeatedly assessed against the validation data.
 
 ### Extra Credit
 
-**EC1:** Evaluating your model. <br>
-j. Predict within training set (remember to transform back)<br>
-k. Plot actual vs predicted values<br>
-l. Tune parameters, repeat g-k until satisfied with results<br>
-m. What is the final model you have chosen? Why?<br>
+**EC1:** Evaluating your model: <br>
+**j.** Predict for a time window within training set and remember to transform back using center_history and scale_history, which we stored in Q5.<br>
+**k.** Plot actual versus predicted values against time.<br>
+**l.** Tune your parameters by repeating g-k until your satisfied with results.<br>
+**m.** What is the final model you have chosen? Why?<br>
 
-**EC2:** Pick from ARIMA or Prophet to train a new forecasting model. Keep in mind that you will need to create a training and test set. It will be best if you can also do a time series cross validation which is different from a typical cross validation technique for the reason stated at the end of Question 4. 
+**EC2:** 
+**n.** Add a testing set in the above workflow.
+**o.** Use the testing set to evaluate the model.
+**p.** Add backtesting and get the RMSE results for both the testing and training with 6 splits.
+
+**EC3:** Pick from ARIMA or Prophet to train a new forecasting model. Keep in mind that you will need to create a training and test set. It will be best if you can also do a time series cross validation which is different from a typical cross validation technique for the reason stated at the end of Question 4. 
 
 Here is some more information about the [cross validation](https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9) for time series data
 

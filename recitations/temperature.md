@@ -86,9 +86,9 @@ Throughout this tutorial on LSTM, we will be using pieces from this [tutorial](h
 Make sure you run install_keras() if you are working in R instead of the typical install.packages(). Also, bring in recipes, dplyr, tibble, tibbletime, and ggplot2.
 
 Transforming the data for modeling:
-a. Creating three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq) to help quickly verify set lengths throughout this process
-b. Splitting data into a training and validation set (we will address the test set later) by just using the indexes of the dataframe (About 2/3 of the data for training and 1/3 for testing is a place to start)
-c. Binding the training and validation set together with a key and set the index to be the date
+a. Creating three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq) to help quickly verify set lengths throughout this process <br>
+b. Splitting data into a training and validation set (we will address the test set later) by just using the indexes of the dataframe (About 2/3 of the data for training and 1/3 for testing is a place to start)<br>
+c. Binding the training and validation set together with a key and set the index to be the date<br>
 
 Assuming the_date is the Date type of dates, the code for part c may look something like this: 
 {% highlight r %}
@@ -100,9 +100,9 @@ df <- bind_rows(
 {% endhighlight r %}
 * code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
 
-d. Determine the timesteps and batch size
-	1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)
-	2. Batch size: Where would you like to divide the data to predict?
+d. Determine the timesteps and batch size<br>
+	1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)<br>
+	2. Batch size: Where would you like to divide the data to predict?<br>
 e. Center the data and store the values to undo tranformation later
 
 Assuming Temp is the temperatures and df is your dataframe with the key column added, the code for part e may look something like this: 
@@ -119,8 +119,8 @@ scale_history <- rec_obj$steps[[3]]$means["Temp"]
 * code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
 
 **Q6:** Modeling:
-f. Build the data for modeling:
-	1. Define functions: build matrix and reshape X (given in the blog)
+f. Build the data for modeling:<br>
+	1. Define functions: build matrix and reshape X (given in the blog)<br>
 	2. Extract values, build, create, and reshape matrix
 
 Assuming df_processed_tbl is the result from the bake() with the rec_obj and df, the code for part f2 for the training set may look something like this: 
@@ -141,8 +141,8 @@ y_train <- reshape_X_3d(y_train)
 {% endhighlight r %}
 * code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
 
-g. initialize flags
-h. itialize number of predictions, number of features, callbacks
+g. initialize flags<br>
+h. itialize number of predictions, number of features, callbacks<br>
 i. create model, add layers, fit the model, plot the history
 
 Assuming , the code for part i (fit the model) may look something like this: 
@@ -163,10 +163,10 @@ history <- model %>% fit(
 
 **EC1:**
 Evaluating:
-j. Predict within training set (remember to transform back)
-k. Plot actual vs predicted values
-l. Tune parameters, repeat g-k until satisfied with results
-m. What is the final model you have chosen? Why?
+j. Predict within training set (remember to transform back)<br>
+k. Plot actual vs predicted values<br>
+l. Tune parameters, repeat g-k until satisfied with results<br>
+m. What is the final model you have chosen? Why?<br>
 
 **EC2:** Pick from ARIMA or Prophet to train a new forecasting model. Keep in mind that you will need to create a training and test set. It will be best if you can also do a time series cross validation which is different from a typical cross validation technique for the reason stated at the end of Question 4. 
 

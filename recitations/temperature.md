@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Forecasting The Temperature
+title: Forecasting Temperature
 permalink: /r/temperature/
 menu: false
 ---

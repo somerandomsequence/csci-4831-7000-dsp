@@ -7,3 +7,4 @@ During 1-1 meeting sessions, we'll use class-time for recitations. The goal of t
 data science techniques that may not be integral to your own project:
 
   * Recitation 1: [Understanding Happiness](/r/happiness)
+  * Recitation 2: [Forecasting Temperature](/r/temperature)

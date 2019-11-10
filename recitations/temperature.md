@@ -186,11 +186,10 @@ In this process, you should see the model being fit on the training data and rep
 
 **EC3:** Pick from ARIMA or Prophet to train a new forecasting model. Keep in mind that you will need to create a training and test set. It will be best if you can also do a time series cross validation which is different from a typical cross validation technique for the reason stated at the end of Question 4. 
 
-Here is some more information about the [cross validation](https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9) for time series data
-
-Here is a resource for [ARIMA](https://datascienceplus.com/time-series-analysis-using-arima-model-in-r/)
-
-Here is a resource for [Prophet](https://facebook.github.io/prophet/docs/quick_start.html#r-api)
+Helpful resources:
+ * [cross validation](https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9) for time series data
+ * [ARIMA](https://datascienceplus.com/time-series-analysis-using-arima-model-in-r/)
+ * [Prophet](https://facebook.github.io/prophet/docs/quick_start.html#r-api)
 
 Include: 
 - Data Characterization: exploratory, ACF, and PACF plots with interpretations and code

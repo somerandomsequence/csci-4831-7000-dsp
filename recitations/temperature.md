@@ -82,13 +82,13 @@ Before we dig into the modeling portion, one key difference between time series 
 
 Throughout this tutorial on LSTM, we will be using pieces from this [tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) by RStudio. There will be modifications, so be sure to follow along with the steps listed here and not the steps in the blog. If you'd like a deeper dive into LSTM, I would suggest reviewing this blog post in more detail.
 
-**Q5:** Packages: 
+Packages:<br>
 Make sure you run install_keras() if you are working in R instead of the typical install.packages(). Also, bring in recipes, dplyr, tibble, tibbletime, and ggplot2.
 
-Transforming the data for modeling:
-a. Creating three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq) to help quickly verify set lengths throughout this process <br>
-b. Splitting data into a training and validation set (we will address the test set later) by just using the indexes of the dataframe (About 2/3 of the data for training and 1/3 for testing is a place to start)<br>
-c. Binding the training and validation set together with a key and set the index to be the date<br>
+**Q5:** Transforming the data for modeling:<br>
+a. Create three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq) to help quickly verify set lengths throughout this process <br>
+b. Split data into a training and validation set (we will address the test set later) by just using the indexes of the dataframe (About 2/3 of the data for training and 1/3 for testing is a place to start)<br>
+c. Bind the training and validation set together with a key and set the index to be the date<br>
 
 Assuming the_date is the Date type of dates, the code for part c may look something like this: 
 {% highlight r %}
@@ -101,9 +101,9 @@ df <- bind_rows(
 * code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
 
 d. Determine the timesteps and batch size<br>
-	1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)<br>
-	2. Batch size: Where would you like to divide the data to predict?<br>
-e. Center the data and store the values to undo tranformation later
+	<p class="tab">1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)</p><br>
+	<p class="tab">2. Batch size: Where would you like to divide the data to predict?</p><br>
+e. Center the data and store the values to undo tranformation later<br>
 
 Assuming Temp is the temperatures and df is your dataframe with the key column added, the code for part e may look something like this: 
 {% highlight r %}
@@ -120,8 +120,8 @@ scale_history <- rec_obj$steps[[3]]$means["Temp"]
 
 **Q6:** Modeling:
 f. Build the data for modeling:<br>
-	1. Define functions: build matrix and reshape X (given in the blog)<br>
-	2. Extract values, build, create, and reshape matrix
+	<p class="tab">1. Define functions: build matrix and reshape X (given in the blog)</p><br>
+	<p class="tab">2. Extract values, build, create, and reshape matrix</p>
 
 Assuming df_processed_tbl is the result from the bake() with the rec_obj and df, the code for part f2 for the training set may look something like this: 
 {% highlight r %}
@@ -143,7 +143,7 @@ y_train <- reshape_X_3d(y_train)
 
 g. initialize flags<br>
 h. itialize number of predictions, number of features, callbacks<br>
-i. create model, add layers, fit the model, plot the history
+i. create model, add layers, fit the model, plot the history<br>
 
 Assuming , the code for part i (fit the model) may look something like this: 
 {% highlight r %}
@@ -161,8 +161,7 @@ history <- model %>% fit(
 
 ### Extra Credit
 
-**EC1:**
-Evaluating:
+**EC1:** Evaluating your model. <br>
 j. Predict within training set (remember to transform back)<br>
 k. Plot actual vs predicted values<br>
 l. Tune parameters, repeat g-k until satisfied with results<br>

@@ -86,7 +86,7 @@ Packages:<br>
 Make sure you run install_keras() if you are working in R instead of the typical install.packages(). Also, bring in recipes, dplyr, tibble, tibbletime, and ggplot2.
 
 **Q5:** Transforming the data for modeling:<br>
-a. Create three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq) to help quickly verify set lengths throughout this process <br>
+a. Create three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq)) to help quickly verify set lengths throughout this process <br>
 b. Split data into a training and validation set (we will address the test set later) by just using the indexes of the dataframe (About 2/3 of the data for training and 1/3 for testing is a place to start)<br>
 c. Bind the training and validation set together with a key and set the index to be the date<br>
 
@@ -101,8 +101,8 @@ df <- bind_rows(
 * code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
 
 d. Determine the timesteps and batch size<br>
-	<p class="tab">1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)</p><br>
-	<p class="tab">2. Batch size: Where would you like to divide the data to predict?</p><br>
+	<p>1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)</p><br>
+	<p>2. Batch size: Where would you like to divide the data to predict?</p><br>
 e. Center the data and store the values to undo tranformation later<br>
 
 Assuming Temp is the temperatures and df is your dataframe with the key column added, the code for part e may look something like this: 
@@ -120,8 +120,8 @@ scale_history <- rec_obj$steps[[3]]$means["Temp"]
 
 **Q6:** Modeling:
 f. Build the data for modeling:<br>
-	<p class="tab">1. Define functions: build matrix and reshape X (given in the blog)</p><br>
-	<p class="tab">2. Extract values, build, create, and reshape matrix</p>
+	<p>1. Define functions: build matrix and reshape X (given in the blog)</p><br>
+	<p>2. Extract values, build, create, and reshape matrix</p>
 
 Assuming df_processed_tbl is the result from the bake() with the rec_obj and df, the code for part f2 for the training set may look something like this: 
 {% highlight r %}

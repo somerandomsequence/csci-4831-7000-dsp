@@ -96,8 +96,8 @@ Make sure you run install_keras() if you are working in R instead of the typical
 
 Also, install the packages: recipes, dplyr, tibble, tibbletime, and ggplot2.
 
-**Q5:** Transforming the data for modeling: We will need to do some additional data transforming before training a LSTM model.<br>
-**a.** We will want to make sure we have a dataframe created with these three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq)) to help quickly verify set lengths throughout this process <br>
+**Q5:** Transforming the data for modeling<br>
+**a.** We will need to do some additional data transforming before training a LSTM model. We will want to make sure we have a dataframe created with these three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq)) to help quickly verify set lengths throughout this process <br>
 **b.** Split data into a training and validation set (we will address the test set later) by just using the indexes of the dataframe. Using about 2/3 of the data for training and 1/3 for testing is a reasonable place to start.<br>
 **c.** Bind the training and validation set together with a key and set the index to be the date<br>
 
@@ -129,7 +129,7 @@ scale_history <- rec_obj$steps[[3]]$means["Temp"]
 {% endhighlight r %}
 * code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
-**Q6:** Modeling: <br>
+**Q6:** Modeling <br>
 **f.** Next, you'll need to build the data for modeling:<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Define functions: build matrix and reshape X (given in the tutorial)<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Extract values, build, create, and reshape matrix

@@ -188,7 +188,7 @@ In this process, you should see the model being fit on the training data and rep
 
 ### Extra Credit
 
-**EC1:** Evaluating your model: <br>
+**EC1:** Tuning your model: <br>
 **j.** Predict for a time window within training set and remember to transform back using center_history and scale_history, which we stored in Q5.<br>
 **k.** Plot actual versus predicted values against time.<br>
 **l.** Tune your parameters by repeating g-k until your satisfied with results.<br>

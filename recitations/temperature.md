@@ -161,7 +161,8 @@ y_train <- train_matrix[, (n_timesteps+1):(n_timesteps * 2)]
 X_train <- reshape_X_3d(X_train)
 y_train <- reshape_X_3d(y_train)
 {% endhighlight r %}
-* code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
+
+(code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/))
 
 **g.** Now you'll want to initialize the flags which will contain a lot of information for the LSTM model and parameters that you may want to consider changing or tuning. There is an example of this in the tutorial as well.<br>
 
@@ -180,7 +181,8 @@ history <- model %>% fit(
   callbacks   = callbacks
 )
 {% endhighlight r %}
-* code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
+
+(code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/))
 
 In this process, you should see the model being fit on the training data and repeatedly assessed against the validation data.
 

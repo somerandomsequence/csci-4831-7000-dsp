@@ -179,10 +179,10 @@ In this process, you should see the model being fit on the training data and rep
 **l.** Tune your parameters by repeating g-k until your satisfied with results.<br>
 **m.** What is the final model you have chosen? Why?<br>
 
-**EC2:** 
-**n.** Add a testing set in the above workflow.
-**o.** Use the testing set to evaluate the model.
-**p.** Add backtesting and get the RMSE results for both the testing and training with 6 splits.
+**EC2:** Creating more robust results:<br>
+**n.** Add a testing set in the above workflow.<br>
+**o.** Use the testing set to evaluate the model.<br>
+**p.** Add backtesting and get the RMSE results for both the testing and training with 6 splits.<br>
 
 **EC3:** Pick from ARIMA or Prophet to train a new forecasting model. Keep in mind that you will need to create a training and test set. It will be best if you can also do a time series cross validation which is different from a typical cross validation technique for the reason stated at the end of Question 4. 
 

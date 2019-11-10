@@ -5,9 +5,9 @@ permalink: /r/temperature/
 menu: false
 ---
 
-Melbourne, Australia: Minimum Daily Temperatures Dataset
+Minimum Daily Temperatures Dataset
 
-In this assignment, you will explore the minimum daily temperatures for Melbourne, Australia. 
+In this assignment, you will explore the minimum daily temperatures for a location of your choice. 
 
 After data characterization and exploration, you will then develop a model to predict the minimum daily temperatures from a time period within the given data. While we can also try to predict outside of the given data, predicting inside the given years will allow us to evaluate our forecasting algorithm.
 
@@ -15,9 +15,9 @@ For this assignment you will likely work in either an Rmd ([R Markdown](http://r
 
 ## Data
 
-This dataset contains the minimum daily temperatures in Celsius for Melbourne. It contains ten years of data from January 1st 1981 to December 31st 1990 with two columns (date and temperature) totaling of 3,650 observations. 
+You will want to visit [NOAA](https://www.ncdc.noaa.gov/cdo-web/search)'s website and fill out the fields for the Climate Data Online Search fields. You will want to select "Daily Summaries" for the "Select Weather Observation Type/Dataset" field. Find a city that you're interested in and continue working through the steps once you've added that city to your cart. Under the "Select data types for custom output" be sure to check the minimum temperature field under "Air Temperature."
 
-This data is provided by the [Australian Bureau of Meteorology](http://www.bom.gov.au/climate/data/) and more data can be downloaded from the website besides just minimum temperature data. For our purposes, we will download the data from [Machine Learning Mastery](https://machinelearningmastery.com/time-series-datasets-for-machine-learning/) to ensure we are all working from the same data. There is a download link under the "Minimum Daily Temperatures Dataset" header. 
+It would be helpful to gather a good amount of data. I would suggest around 100 years of data.
 
 ## References
 
@@ -76,23 +76,105 @@ pacf(data$Temp)
 
 But the intrepretation of the graphs is the most important and more complicated part. Interpret the graphs. What information can you gather from the ACF plot? What about the PACF plot?
 
-### Part 2: On your own now ###
+### Part 2: On your own now: Modeling ###
 
-Before we dig into the modeling portion, one key difference between time series data and other data is the autocorrelation. Due to this, creating a testing and training set will not be created through random sampling. Sampling randomly would allow information to leak into your testing set and provide invalid model results. You will want to split data based on portions of time and forecast for the next time step(s). This will make more sense as you start looking into Prophet next...
+Before we dig into the modeling portion, one key difference between time series data and other data is the autocorrelation. Due to this, creating a testing and training set will not be created through random sampling. Sampling randomly would allow information to leak into your testing set and provide invalid model results. You will want to split data based on portions of time and forecast for the next time step(s).
 
-**Q5:** Fit and predict minimum temperature values using [Prophet](https://facebook.github.io/prophet/docs/quick_start.html#r-api). 
+Throughout this tutorial on LSTM, we will be using pieces from this [tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) by RStudio. There will be modifications, so be sure to follow along with the steps listed here and not the steps in the blog. If you'd like a deeper dive into LSTM, I would suggest reviewing this blog post in more detail.
 
-**Q6:** Evaluate your Prophet model. 
+**Q5:** Packages: 
+Make sure you run install_keras() if you are working in R instead of the typical install.packages(). Also, bring in recipes, dplyr, tibble, tibbletime, and ggplot2.
+
+Transforming the data for modeling:
+a. Creating three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq) to help quickly verify set lengths throughout this process
+b. Splitting data into a training and validation set (we will address the test set later) by just using the indexes of the dataframe (About 2/3 of the data for training and 1/3 for testing is a place to start)
+c. Binding the training and validation set together with a key and set the index to be the date
+
+Assuming the_date is the Date type of dates, the code for part c may look something like this: 
+{% highlight r %}
+df <- bind_rows(
+  df_trn %>% add_column(key = "training"),
+  df_val %>% add_column(key = "validation"),
+) %>%
+  as_tbl_time(index = the_date)
+{% endhighlight r %}
+* code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
+
+d. Determine the timesteps and batch size
+	1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)
+	2. Batch size: Where would you like to divide the data to predict?
+e. Center the data and store the values to undo tranformation later
+
+Assuming Temp is the temperatures and df is your dataframe with the key column added, the code for part e may look something like this: 
+{% highlight r %}
+rec_obj <- recipe(Temp ~ ., df) %>%
+  step_sqrt(Temp) %>%
+  step_center(Temp) %>%
+  step_scale(Temp) %>%
+  prep()
+  
+center_history <- rec_obj$steps[[2]]$means["Temp"]
+scale_history <- rec_obj$steps[[3]]$means["Temp"]
+{% endhighlight r %}
+* code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
+
+**Q6:** Modeling:
+f. Build the data for modeling:
+	1. Define functions: build matrix and reshape X (given in the blog)
+	2. Extract values, build, create, and reshape matrix
+
+Assuming df_processed_tbl is the result from the bake() with the rec_obj and df, the code for part f2 for the training set may look something like this: 
+{% highlight r %}
+train_vals <- df_processed_tbl %>%
+  filter(key == "training") %>%
+  select(Temp) %>%
+  pull()
+
+train_matrix <- 
+  build_matrix(train_vals, n_timesteps + n_predictions)
+  
+X_train <- train_matrix[, 1:n_timesteps]
+y_train <- train_matrix[, (n_timesteps+1):(n_timesteps * 2)]
+
+X_train <- reshape_X_3d(X_train)
+y_train <- reshape_X_3d(y_train)
+{% endhighlight r %}
+* code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
+
+g. initialize flags
+h. itialize number of predictions, number of features, callbacks
+i. create model, add layers, fit the model, plot the history
+
+Assuming , the code for part i (fit the model) may look something like this: 
+{% highlight r %}
+history <- model %>% fit(
+  x           = X_train,
+  y           = y_train,
+  validation_data = list(X_valid, y_valid),
+  batch_size  = FLAG$batch_size,
+  epochs      = FLAG$in_epochs,
+  callbacks   = callbacks
+)
+{% endhighlight r %}
+* code credit to this [RStudio](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) tutorial.
+
 
 ### Extra Credit
 
-**EC1:** Pick from ARIMA or LSTM to train a new forecasting model. Keep in mind that you will need to create a training and test set. It will be best if you can also do a time series cross validation which is different from a typical cross validation technique for the reason stated at the end of Question 4. 
+**EC1:**
+Evaluating:
+j. Predict within training set (remember to transform back)
+k. Plot actual vs predicted values
+l. Tune parameters, repeat g-k until satisfied with results
+m. What is the final model you have chosen? Why?
+
+**EC2:** Pick from ARIMA or Prophet to train a new forecasting model. Keep in mind that you will need to create a training and test set. It will be best if you can also do a time series cross validation which is different from a typical cross validation technique for the reason stated at the end of Question 4. 
 
 Here is some more information about the [cross validation](https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9) for time series data
 
 Here is a resource for [ARIMA](https://datascienceplus.com/time-series-analysis-using-arima-model-in-r/)
 
-Here is a resource for [LSTM](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/)
+Here is a resource for [Prophet](https://facebook.github.io/prophet/docs/quick_start.html#r-api)
 
 Include: 
 - Data Characterization: exploratory, ACF, and PACF plots with interpretations and code

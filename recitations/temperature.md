@@ -1,21 +1,19 @@
 ---
 layout: page
-title: Forecasting Minimum Daily Temperature
+title: Forecasting The Temperature
 permalink: /r/temperature/
 menu: false
 ---
 
-Minimum Daily Temperatures Dataset
+In this assignment, you will explore the daily temperatures for a location of your choice. 
 
-In this assignment, you will explore the minimum daily temperatures for a location of your choice. 
-
-After data characterization and exploration, you will then develop a model to predict the minimum daily temperatures from a time period within the given data. While we can also try to predict outside of the given data, predicting inside the given years will allow us to evaluate our forecasting algorithm.
+After data characterization and exploration, you will then develop a model to predict the daily temperatures from a time period within the given data. While we can also try to predict outside of the given data, predicting inside the given years will allow us to evaluate our forecasting algorithm.
 
 For this assignment you will likely work in either an Rmd ([R Markdown](http://rmarkdown.rstudio.com/)) file or an iPython notebook. If you choose to use a different environment (e.g., Julia), make sure that you commit everything needed to your class repository to run and understand what you've done.
 
 ## Data
 
-You will want to visit [NOAA](https://www.ncdc.noaa.gov/cdo-web/search)'s website and fill out the fields for the Climate Data Online Search fields. You will want to select "Daily Summaries" for the "Select Weather Observation Type/Dataset" field. Find a city that you're interested in and continue working through the steps once you've added that city to your cart. Under the "Select data types for custom output" be sure to check the minimum temperature field under "Air Temperature."
+You will want to visit [NOAA](https://www.ncdc.noaa.gov/cdo-web/search)'s website and fill out the fields for the Climate Data Online Search fields. You will want to select "Daily Summaries" for the "Select Weather Observation Type/Dataset" field. Find a city that you're interested in and continue working through the steps once you've added that city to your cart. Under the "Select data types for custom output" be sure to check the minimum temperature field under "Air Temperature." You can also work to predict maximum temperature if you prefer (or the difference between the two).
 
 It would be helpful to gather a good amount of data. I would suggest around 100 years of data.
 
@@ -52,6 +50,8 @@ It should confirm the information given above. As a next step, it would be helpf
 qplot(seq_along(data$Temp), data$Temp) + geom_line()
 {% endhighlight %}
 
+Note that in this example, the Temp variable corresponds to the daily minimum temperture. You can also plot the maximum and the daily temperture range if you prefer.
+
 Try plotting the data both by using the index and date.
 
 What do you notice from the plot? Are there any trends that you can see? If so, what are they?
@@ -82,8 +82,7 @@ pacf(data$Temp)
 
 But the intrepretation of the graphs is the most important and more complicated part. Interpret the graphs. What information can you gather from the ACF plot? What about the PACF plot?
 
-### Part 2: On your own now
-### Modeling ###
+### Part 2: Modeling with LSTM
 
 Before we dig into the modeling portion, one key difference between time series data and other data is the autocorrelation. Due to this, creating a testing and training set will not be created through random sampling. Sampling randomly would allow information to leak into your testing set and provide invalid model results. You will want to split data based on portions of time and forecast for the next time step(s).
 
@@ -91,14 +90,20 @@ For the modeling piece of this recitation, we will be exploring a Long-short ter
 
 Throughout this tutorial on LSTM, we will be using pieces from this [tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/) by RStudio. There will be modifications, so be sure to follow along with the steps listed here and not the steps in the blog. If you'd like a deeper dive into LSTM, I would suggest reviewing this blog post in more detail.
 
-Packages:<br>
+**Packages:**
+
 Make sure you run install_keras() if you are working in R instead of the typical install.packages(). This will allow for the keras package as well as the Tensorflow backend to be installed. You can find more information about the installation [here] (https://keras.rstudio.com/index.html). 
 
 Also, install the packages: recipes, dplyr, tibble, tibbletime, and ggplot2.
 
-**Q5:** Transforming the data for modeling<br>
-**a.** We will need to do some additional data transforming before training a LSTM model. We will want to make sure we have a dataframe created with these three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq)) to help quickly verify set lengths throughout this process <br>
+**Transforming the data for modeling:**
+
+We will need to do some additional data transforming before training a LSTM model.
+
+**a.** We will want to make sure we have a dataframe created with these three columns: date as Date type, temperature as a numeric value, and a sequential id after sorted by Date ([seq.int](https://www.rdocumentation.org/packages/base/versions/3.6.1/topics/seq)) to help quickly verify set lengths throughout this process <br>
+
 **b.** Split data into a training and validation set (we will address the test set later) by just using the indexes of the dataframe. Using about 2/3 of the data for training and 1/3 for testing is a reasonable place to start.<br>
+
 **c.** Bind the training and validation set together with a key and set the index to be the date<br>
 
 Assuming the_date is the Date type of dates, the code for part c may look something like this: 
@@ -109,14 +114,17 @@ df <- bind_rows(
 ) %>%
   as_tbl_time(index = the_date)
 {% endhighlight r %}
-* code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
+
+(code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/))
 
 **d.** Determine the timesteps and batch size through answering the following two questions and initializing the variables n_timesteps, n_predictions, and batch_size.<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Daily data: How far ahead do you want to predict? Try to catch a natural trend period (consider the ACF and PACF plots)<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Batch size: Where would you like to divide the data to predict?<br>
+
 **e.** Next you'll want to center the data and store the values to undo tranformation later.<br>
 
 Assuming Temp is the temperatures and df is your dataframe with the key column added, the code for part e may look something like this: 
+
 {% highlight r %}
 rec_obj <- recipe(Temp ~ ., df) %>%
   step_sqrt(Temp) %>%
@@ -127,12 +135,15 @@ rec_obj <- recipe(Temp ~ ., df) %>%
 center_history <- rec_obj$steps[[2]]$means["Temp"]
 scale_history <- rec_obj$steps[[3]]$means["Temp"]
 {% endhighlight r %}
-* code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
-**Q6:** Modeling <br>
+(code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/))
+
+**Modeling:**
+
 **f.** Next, you'll need to build the data for modeling:<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Define functions: build matrix and reshape X (given in the tutorial)<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Extract values, build, create, and reshape matrix
+
+1. Define functions: build matrix and reshape X (given in the tutorial)<br>
+1. Extract values, build, create, and reshape matrix
 
 Assuming df_processed_tbl is the result from the bake() with the rec_obj and df, the code for part f2 for the training set may look something like this: 
 {% highlight r %}
@@ -153,7 +164,9 @@ y_train <- reshape_X_3d(y_train)
 * code credit to this [RStudio tutorial](https://blogs.rstudio.com/tensorflow/posts/2018-06-25-sunspots-lstm/).
 
 **g.** Now you'll want to initialize the flags which will contain a lot of information for the LSTM model and parameters that you may want to consider changing or tuning. There is an example of this in the tutorial as well.<br>
+
 **h.** Now initialize the number of predictions, number of features, callbacks from the flags instead of manually as we did in Q5. You may also look into the optimizer, but we won't cover that in this tutorial.<br>
+
 **i.** Next, you'll create the model, add layers, fit the model, and plot the history.<br>
 
 The code for part i (fit the model) may look something like this: 

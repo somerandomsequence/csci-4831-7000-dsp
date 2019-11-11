@@ -166,7 +166,7 @@ y_train <- reshape_X_3d(y_train)
 
 **g.** Now you'll want to initialize the flags which will contain a lot of information for the LSTM model and parameters that you may want to consider changing or tuning. There is an example of this in the tutorial as well.<br>
 
-**h.** Now initialize the number of predictions, number of features, callbacks from the flags instead of manually as we did in Q5. You may also look into the optimizer, but we won't cover that in this tutorial.<br>
+**h.** Now initialize the number of predictions, number of features, callbacks, and optimizer. Initialize from the flags instead of manually as we did in Q5 when possible. You may also look into the optimizer more, but we won't cover that in this tutorial.<br>
 
 **i.** Next, you'll create the model, add layers, fit the model, and plot the history.<br>
 

@@ -115,7 +115,7 @@ You'll be graded on the quality of the technical writing and description, which 
 
 ## Assignment 6: Results
 
-For Assignment 6, you'll add on to the LaTeX template provided as part of the repository template to write the results section of your paper, building off of assignment 5. The results section should state and discuss findings from your methods section, how it could be applied, and look at your research as a whole as well as next steps for this work or additional research that could add on to this work. This should follow the general format, tone, and structure as the papers we've read in class. 
+For Assignment 6, you'll add on to the LaTeX template provided as part of the repository template to write the results section of your paper, building off of assignment 5. The results section should state and discuss findings from your methods section as well as supporting graphs and figures. If you'd like to you could also include a discussion to review how your research could be applied, and look at your work as a whole as well as next steps for this work or additional research that could compliment this work. If you decide not to include a discussion in this assignment, you will need to include it for the full draft. This should follow the general format, tone, and structure as the papers we've read in class. 
 
 As in Assignment 5:
 

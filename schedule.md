@@ -32,11 +32,11 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 11/12/2019|12|Tue|1-1 Meetings/Recitation|Project||
 11/14/2019|12|Thu|1-1 Meetings/Recitation|Project| | 
 11/19/2019|13|Tue|Guest: Dr. Peter Graf|Guest| | Assignment 6: Draft Paper: Results
-11/21/2019|13|Thu|Lecture 6: Dr. Lee Becker|Lecture| Assignment 7: Full Rough Draft, Code & Presentation |
+11/21/2019|13|Thu|Lecture 6: Dr. Lee Becker|Lecture| Assignment 7: Full Rough Draft of Paper & Presentation |
 11/26/2019|Break|Tue|Fall Break|No Class| | 
 11/28/2019|Break|Thu|Fall Break|No Class| | 
-12/3/2019|15|Tue|Guest: Dr. Dmitry Duplyakin|Guest|Assignment 8: Final Paper, Code & Presentation| Assignment 7: Full Rough Draft, Code & Presentation
+12/3/2019|15|Tue|Guest: Dr. Dmitry Duplyakin|Guest|Assignment 8: Final Paper, Code & Presentation| Assignment 7: Full Rough Draft of Paper & Presentation
 12/5/2019|15|Thu|Guest: Dr. Sam Hoda|Guest| | 
 12/10/2019|Dead|Tue|Presentation A|Project| |Assignment 8: Presentation
 12/12/2019|Dead|Thu|Presentation B|Project| | 
-12/17/2019|Finals Week|TBD|Presentation C|Project| |Assignment 8: Final Paper & Code
+12/14/2019|Final|Sat 1:30-4:00PM|Presentation C|Project| |Assignment 8: Final Paper & Code

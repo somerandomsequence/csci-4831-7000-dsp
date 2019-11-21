@@ -39,4 +39,4 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 12/5/2019|15|Thu|Guest: Dr. Sam Hoda|Guest| | 
 12/10/2019|Dead|Tue|Presentation A|Project| |Assignment 8: Presentation
 12/12/2019|Dead|Thu|Presentation B|Project| | 
-12/14/2019|Final|Sat 1:30-4:00PM|Presentation C|Project| |Assignment 8: Final Paper & Code
+12/14/2019|Final|Sat 1:30-4:00PM|Presentation C|Project| |Assignment 8: Final Paper & Code (Due 11:59PM on 12/14)

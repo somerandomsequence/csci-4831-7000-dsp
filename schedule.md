@@ -31,8 +31,8 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 11/7/2019|11|Thu|Discussion/Office Hours 5|Discussion| |Reading 5
 11/12/2019|12|Tue|1-1 Meetings/Recitation|Project||
 11/14/2019|12|Thu|1-1 Meetings/Recitation|Project| | 
-11/19/2019|13|Tue|Guest: Dr. Peter Graf|Guest| | Assignment 6: Draft Paper: Results
-11/21/2019|13|Thu|Lecture 6: Dr. Lee Becker|Lecture| Assignment 7: Full Rough Draft of Paper & Presentation |
+11/19/2019|13|Tue|[Guest: Dr. Peter Graf](https://drive.google.com/file/d/1ayG8cAk3iWdfAa9fQxeBZ1VGbIQBYE6s/view?usp=sharing)|Guest| | Assignment 6: Draft Paper: Results
+11/21/2019|13|Thu|[Lecture 6: Dr. Lee Becker](https://drive.google.com/file/d/1UyUmTMD63A-GZ6mMiyG3YbobGuVixkNm/view?usp=sharing)|Lecture| Assignment 7: Full Rough Draft of Paper & Presentation |
 11/26/2019|Break|Tue|Fall Break|No Class| | 
 11/28/2019|Break|Thu|Fall Break|No Class| | 
 12/3/2019|15|Tue|Guest: Dr. Dmitry Duplyakin|Guest|Assignment 8: Final Paper, Code & Presentation| Assignment 7: Full Rough Draft of Paper & Presentation

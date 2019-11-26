@@ -25,7 +25,7 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 10/17/2019|8|Thu|1-1 Meetings/Recitation|Project| | 
 10/22/2019|9|Tue|Discussion/Office Hours 3|Discussion| | Reading 3
 10/24/2019|9|Thu|Guest: Dr. Galen MacLauren|Guest|Reading 4: Geospatial Analysis|Assignment 4: Draft Results & Code
-10/29/2019|10|Tue|Guest: Anirudh Rathore and Mike McCabe|Guest| Assignment 5: Draft Paper: Data and Methods| 
+10/29/2019|10|Tue|Guest: Anirudh Rathore and [Mike McCabe](https://drive.google.com/open?id=1jwj4CTDYExF3PHckXZNl4L74xgVKueqH)|Guest| Assignment 5: Draft Paper: Data and Methods| 
 10/31/2019|10|Thu|Discussion/Office Hours 4|Discussion|Reading 5: Deep Neural Networks|Reading 4
 11/5/2019|11|Tue|Guest: Dr. Kristi Potter|Guest|Assignment 6: Draft Paper: Results| Assignment 5: Draft Paper: Data and Methods
 11/7/2019|11|Thu|Discussion/Office Hours 5|Discussion| |Reading 5

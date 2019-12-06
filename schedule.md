@@ -10,9 +10,9 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 8/27/2019|1|Tue|[Lecture 0: Course Introduction](https://docs.google.com/presentation/d/1nGcUFW1eMshMngKgJ3I6yVREEP6hEP5AnzhwOq6PI1U/edit?usp=sharing)|Lecture|Assignment 0: Fork Repo| 
 8/29/2019|1|Thu|[Lecture 1: Statistics for Data Scientists: Distributions, Tests, Normality](https://docs.google.com/presentation/d/14wiSgjc-4IOU2Mb93ajp5QoOs3nhY-83UxWjK5DjIBQ/edit?usp=sharing)|Lecture| Textbook Reading: Applied Predictive Modeling pages 1-26| 
 9/3/2019|2|Tue|[Lecture 2: Learning Things: Clustering, Applied Predictive Modeling, <br/>Cross-Validation and Performance Evaluation](https://docs.google.com/presentation/d/1etVTkAnQvjLA3-JyjRIGqrJUcZdrusSpinQ2AYHmfpU/edit?usp=sharing)|Lecture| Textbook Reading: (See Slides)|Assignment 0: Fork Repo
-9/5/2019|2|Thu|Guest: Dr. Karen Kazor|Guest| | 
+9/5/2019|2|Thu|Guest: Dr. Karen Kazor (Oracle)|Guest| | 
 9/10/2019|3|Tue|Guest: Community Data Science - Boulder Nonprofits|Guest| [Sign up for a 1-1 Meeting Slot](https://appoint.ly/s/dsprojects/1-1)| 
-9/12/2019|3|Thu|[Guest: Dr. Monte Lunacek](https://docs.google.com/presentation/d/1NtWBjQBNEhI-vMZCT3q0QltomflwYQFC3TWMeKUTarU/edit?usp=sharing)|Guest| Assignment 1: Project Ideas & Research Questions | 
+9/12/2019|3|Thu|[Guest: Dr. Monte Lunacek (NREL)](https://docs.google.com/presentation/d/1NtWBjQBNEhI-vMZCT3q0QltomflwYQFC3TWMeKUTarU/edit?usp=sharing)|Guest| Assignment 1: Project Ideas & Research Questions | 
 9/17/2019|4|Tue|[Lecture 3: Be a Polyglot - Practical Data Science <br/>Programming in Python and R](https://docs.google.com/presentation/d/10ObNdg-TKQHaWdmloHsfdFfgwA7ae7_QNXKT9x_1uuk/edit?usp=sharing)|Lecture| | 
 9/19/2019|4|Thu|1-1 Meetings|Project|Reading 1: Regression| Assignment 1: Project Ideas & Research Questions
 9/24/2019|5|Tue|1-1 Meetings|Project| Assignment 2: Data Prep and Methods Plan | 
@@ -24,19 +24,19 @@ Below is a up-to-date view of the class schedule. Adjustments will be made throu
 10/15/2019|8|Tue|1-1 Meetings/Recitation|Project|Reading 3: Visualization and <br/>Knowledge Discovery|
 10/17/2019|8|Thu|1-1 Meetings/Recitation|Project| | 
 10/22/2019|9|Tue|Discussion/Office Hours 3|Discussion| | Reading 3
-10/24/2019|9|Thu|Guest: Dr. Galen MacLauren|Guest|Reading 4: Geospatial Analysis|Assignment 4: Draft Results & Code
+10/24/2019|9|Thu|Guest: Dr. Galen MacLauren (NREL)|Guest|Reading 4: Geospatial Analysis|Assignment 4: Draft Results & Code
 10/29/2019|10|Tue|Guest: Anirudh Rathore and [Mike McCabe](https://drive.google.com/open?id=1jwj4CTDYExF3PHckXZNl4L74xgVKueqH)|Guest| Assignment 5: Draft Paper: Data and Methods| 
 10/31/2019|10|Thu|Discussion/Office Hours 4|Discussion|Reading 5: Deep Neural Networks|Reading 4
-11/5/2019|11|Tue|Guest: Dr. Kristi Potter|Guest|Assignment 6: Draft Paper: Results| Assignment 5: Draft Paper: Data and Methods
+11/5/2019|11|Tue|Guest: Dr. Kristi Potter (NREL)|Guest|Assignment 6: Draft Paper: Results| Assignment 5: Draft Paper: Data and Methods
 11/7/2019|11|Thu|Discussion/Office Hours 5|Discussion| |Reading 5
 11/12/2019|12|Tue|1-1 Meetings/Recitation|Project||
 11/14/2019|12|Thu|1-1 Meetings/Recitation|Project| | 
-11/19/2019|13|Tue|[Guest: Dr. Peter Graf](https://drive.google.com/file/d/1ayG8cAk3iWdfAa9fQxeBZ1VGbIQBYE6s/view?usp=sharing)|Guest| | Assignment 6: Draft Paper: Results
-11/21/2019|13|Thu|[Lecture 6: Dr. Lee Becker](https://drive.google.com/file/d/1UyUmTMD63A-GZ6mMiyG3YbobGuVixkNm/view?usp=sharing)|Lecture| Assignment 7: Full Rough Draft of Paper & Presentation |
+11/19/2019|13|Tue|[Guest: Dr. Peter Graf (NREL)](https://drive.google.com/file/d/1ayG8cAk3iWdfAa9fQxeBZ1VGbIQBYE6s/view?usp=sharing)|Guest| | Assignment 6: Draft Paper: Results
+11/21/2019|13|Thu|[Guest: Dr. Lee Becker (Pearson)](https://drive.google.com/file/d/1UyUmTMD63A-GZ6mMiyG3YbobGuVixkNm/view?usp=sharing)|Lecture| Assignment 7: Full Rough Draft of Paper & Presentation |
 11/26/2019|Break|Tue|Fall Break|No Class| | 
 11/28/2019|Break|Thu|Fall Break|No Class| | 
-12/3/2019|15|Tue|Guest: Dr. Dmitry Duplyakin|Guest|Assignment 8: Final Paper, Code & Presentation| Assignment 7: Full Rough Draft of Paper & Presentation
-12/5/2019|15|Thu|Guest: Dr. Sam Hoda|Guest| | 
-12/10/2019|Dead|Tue|Presentation A|Project| |Assignment 8: Presentation
-12/12/2019|Dead|Thu|Presentation B|Project| | 
-12/14/2019|Final|Sat 1:30-4:00PM|Presentation C|Project| |Assignment 8: Final Paper & Code (Due 11:59PM on 12/14)
+12/3/2019|15|Tue|[Guest: Dr. Dmitry Duplyakin (U Utah)](https://drive.google.com/file/d/1VbCvnsgoL71ZA5mZkaHkB48x0Zn82tZN/view?usp=sharing)|Guest|Assignment 8: Final Paper, Code & Presentation| Assignment 7: Full Rough Draft of Paper & Presentation
+12/5/2019|15|Thu|Guest: Dr. Sam Hoda (Well Data Labs)|Guest| | 
+12/10/2019|Dead|Tue 8:00-10:45AM|Presentation A|Project| |Assignment 8: Presentation
+12/12/2019|Dead|Thu 8:00-10:45AM|Presentation B|Project| | 
+12/14/2019|Final|Sat|No Final|Project| |Assignment 8: Final Paper & Code (Due 11:59PM on 12/14)
